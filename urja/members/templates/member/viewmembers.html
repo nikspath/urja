@@ -1,0 +1,42 @@
+{%extends 'base.html'%}
+{%block content%}
+{% include "header.html" %}
+<div class="container">
+
+
+  <h2>Urja Members</h2><span ><a href="{%url 'members:addmember'%}">Add Member</a></span>
+   <table class="table">
+   	<thead>
+   		<tr>
+   			<td>Name</td>
+   			<td>Mobile</td>
+   			<td>Email</td>
+   			<td>City</td>
+   			<td>Created on</td>
+   			<td>Edit</td>
+   			<td>Remove</td>
+   		</tr>
+   	</thead>
+   	<tbody>
+   		{%for i in allmember%}
+   		<tr>
+   			<td>{{i.firstname}} {{i.lastname}}</td>
+   			<td>{{i.mobile}}</td>
+   			<td>{{i.email}}</td>
+   			<td>{{i.city}}</td>
+   			<td>{{i.created}}</td>
+   			<td>
+   				<a href="{{i.get_absolute_url}}"><span class="glyphicon glyphicon-pencil"></span></a>
+   			</td>
+   			<td>	
+   				<a href="{%url 'members:deletemembers' pk=i.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+
+   			</td>
+   		</tr>
+   		{%endfor%}
+
+   	</tbody>
+   </table>
+ </div>
+
+{%endblock%}

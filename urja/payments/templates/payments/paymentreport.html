@@ -1,0 +1,24 @@
+{%extends '../base.html'%}
+{%block content%}
+{%include '../header.html'%}
+<div class="container">
+
+	
+	<table class="table">
+    <thead>
+    	<tr><th>Member</th>
+    	<th>Amount</th>
+    	<th>Payment month </th></tr>
+    </thead>	
+    <tbody>
+    	{%for i in pd%}
+    	<tr>
+    	<td>{{i.member.firstname}} {{i.member.lastname}}</td>
+    	<td>{{i.amount}}</td>
+    	<td>{{i.paymonth}} </td>
+    		
+    	</tr>
+    	{%endfor%}
+    </tbody>
+</div>
+{%endblock%}

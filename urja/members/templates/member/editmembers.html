@@ -1,0 +1,74 @@
+
+{%extends 'base.html'%}
+{%block content%}
+{% include "header.html" %}
+<h2>Update Member Form</h2>
+
+
+  <form action="{% url 'members:editmembers' pk=member.id %}" method="POST">{%csrf_token%}
+
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">First Name</label>
+      </div>
+      <div class="col-75">
+      	{{form.firstname}}
+      	<input type="text" name="firstname" value="{{member.firstname}}">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Last Name</label>
+      </div>
+      <div class="col-75">
+        {{form.lastname}}
+        <input type="text" name="lastname" value="{{member.lastname}}">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Mobile</label>
+      </div>
+      <div class="col-75">
+       {{form.mobile}}
+       <input type="text" name="mobile" value="{{member.mobile}}">
+      </div>
+    </div>
+     <div class="row">
+      <div class="col-25">
+        <label for="country">Email</label>
+      </div>
+      <div class="col-75">
+       {{form.email}}
+       <input type="text" name="email" value="{{member.email}}">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Password</label>
+      </div>
+      <div class="col-75">
+       <input type="text" name="password" value="{{member.password}}">
+      </div>
+    </div>
+     <div class="row">
+      <div class="col-25">
+        <label for="country">City</label>
+      </div>
+      <div class="col-75">
+       {{form.city}}
+       <input type="text" name="city" value="{{member.city}}">
+      </div>
+    </div>
+   
+    <div class="row">
+      <button type="submit" class="btn btn-success" >Update member</button>
+    </div>
+  </form>
+
+  {%endblock%}
+
+
+<script>
+	 
+</script>
